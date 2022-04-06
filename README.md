@@ -1,7 +1,7 @@
 # scene_understanding
-Python full pipe implementation of video understanding and adult-child interaction common-sense understanding.
+Python full pipe implementation of video understanding and adult-child interaction.
 
-- The idea behind this project is to build a machine learning pipe that could understand a sequence of frames.
+- The idea behind this project is to have a machine learning module which have a common-sense understanding in sequence of frames.
 - Using 
 
 ![input video](./gifs/input_gif.gif)
