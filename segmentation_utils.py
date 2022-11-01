@@ -4,6 +4,7 @@ import numpy as np
 import random
 from coco_names import COCO_INSTANCE_CATEGORY_NAMES as coco_names
 
+
 # this will help us create a different color for each class
 # COLORS = np.random.uniform(0, 255, size=(len(coco_names), 3))
 COLORS = np.array([[180 , 0, 0],
@@ -22,7 +23,7 @@ def get_outputs(image, model, threshold):
     thresholded_preds_inidices = [scores.index(i) for i in scores if i > threshold]
     thresholded_preds_count = len(thresholded_preds_inidices)
     # get the masks
-    masks = (outputs[0]['masks']>0.5).squeeze().detach().cpu().numpy()
+    masks = (outputs[0]['masks'] > threshold).squeeze().detach().cpu().numpy()
     # discard masks for objects which are below threshold
     masks = masks[:thresholded_preds_count]
     # get the bounding boxes, in (x1, y1), (x2, y2) format
